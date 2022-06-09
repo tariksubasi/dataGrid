@@ -2,6 +2,7 @@ import { createElement } from "react";
 import DataGridWidgetWrapper from "./components/DataGridWidgetWrapper";
 import DataGridWrapper from "./components/DataGridWrapper";
 import useGetProductData from "./hooks/useGetProductData";
+import DataGridRow from "./components/DataGridRow";
 import "./ui/DataGrid.css";
 
 const ValueStatus = {
@@ -21,7 +22,11 @@ export function DataGrid(props) {
         console.warn("myProductData", myProductData);
         return (
             <DataGridWidgetWrapper>
-                <DataGridWrapper></DataGridWrapper>
+                <DataGridWrapper>
+                    {myProductData.map(product => {
+                        return <DataGridRow product={product} />;
+                    })}
+                </DataGridWrapper>
             </DataGridWidgetWrapper>
         );
     } else {
