@@ -13,6 +13,9 @@ const useGetProductData = props => {
     } = props;
 
     const productItems = props.productData.items;
+    const productDataSource = props.productData;
+    productDataSource.setOffset(0);
+    productDataSource.setLimit(10);
 
     productItems.forEach(product => {
         const name = prodName.get(product).value;
