@@ -18,6 +18,14 @@
                 <caption>Product Data</caption>
                 <description>Product Data Description</description>
             </property>
+
+            <property key="productName" type="attribute" required="false" dataSource="productData">
+                <caption>Product Name</caption>
+                <description>Product Name Description</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
         </propertyGroup>
     </properties>
 </widget>
