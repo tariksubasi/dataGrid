@@ -26,6 +26,34 @@
                     <attributeType name="String" />
                 </attributeTypes>
             </property>
+            <property key="productPrice" type="attribute" required="false" dataSource="productData">
+                <caption>Product Price</caption>
+                <description>Product Price Description</description>
+                <attributeTypes>
+                    <attributeType name="Decimal" />
+                </attributeTypes>
+            </property>
+            <property key="productQuantity" type="attribute" required="false" dataSource="productData">
+                <caption>Product Quantity</caption>
+                <description>Product Quantity Description</description>
+                <attributeTypes>
+                    <attributeType name="Integer" />
+                </attributeTypes>
+            </property>
+            <property key="productActive" type="attribute" required="false" dataSource="productData">
+                <caption>Product Active</caption>
+                <description>Product Active Description</description>
+                <attributeTypes>
+                    <attributeType name="Boolean" />
+                </attributeTypes>
+            </property>
+            <property key="productCategory" type="attribute" required="false" dataSource="productData">
+                <caption>Product Category</caption>
+                <description>Product Category Description</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
         </propertyGroup>
     </properties>
 </widget>
