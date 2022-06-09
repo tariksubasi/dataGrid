@@ -1,5 +1,3 @@
-import React from "react";
-
 const useGetProductData = props => {
     let myProductData = [];
 
@@ -14,7 +12,7 @@ const useGetProductData = props => {
 
     const productItems = props.productData.items;
     const productDataSource = props.productData;
-    productDataSource.setOffset(0);
+    //productDataSource.setOffset(10);
     productDataSource.setLimit(10);
 
     productItems.forEach(product => {
@@ -27,7 +25,7 @@ const useGetProductData = props => {
         myProductData.push({ name, active, price, category, quantity });
     });
 
-    return { myProductData };
+    return { myProductData, productDataSource };
 };
 
 export default useGetProductData;

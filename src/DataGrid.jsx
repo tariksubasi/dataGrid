@@ -20,12 +20,12 @@ export function DataGrid(props) {
     } = props;
 
     if (productDataStatus === ValueStatus.available) {
-        const { myProductData } = useGetProductData(props);
+        const { myProductData, productDataSource } = useGetProductData(props);
         console.warn("myProductData", myProductData);
         return (
             <DataGridWidgetWrapper>
                 <DataGridWrapper>
-                    <DataGridTopbar />
+                    <DataGridTopbar productDataSource={productDataSource} />
                     <DataGridHeader product={myProductData[0]} />
                     {myProductData.map(product => {
                         return <DataGridRow product={product} />;
