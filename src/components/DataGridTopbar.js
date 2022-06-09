@@ -8,10 +8,11 @@ const DataGridTopbar = ({ productDataSource }) => {
             style={{
                 display: "flex",
                 justifyContent: "space-between",
-                paddingTop : "5px",
-                paddingBottom : "5px",
-                paddingRight : "15px",
-                paddingLeft : "15px",
+                paddingTop: "5px",
+                paddingBottom: "20px",
+                paddingRight: "15px",
+                paddingLeft: "15px",
+                backgroundColor: "white"
             }}
         >
             <div>

@@ -1,14 +1,15 @@
 import React, { createElement } from "react";
+import "./DataGridHeader.css";
 
 const DataGridHeader = ({ product }) => {
     return (
         <div
+            className="data-grid-header"
             style={{
                 display: "flex",
                 justifyContent: "space-around",
                 padding: "3px",
-                fontWeight: "bold",
-                border: "1px solid"
+                fontWeight: "bold"
             }}
         >
             {Object.keys(product).map(key => {

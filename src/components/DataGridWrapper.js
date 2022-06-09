@@ -1,13 +1,15 @@
-import React,{createElement} from "react";
+import React, { createElement } from "react";
+import "./DataGridWrapper.css";
 
 const DataGridWrapper = ({ children }) => {
     return (
         <div
+            className="data-grid-wrapper"
             style={{
-                border: "1px solid",
                 marginTop: "3%",
                 width: "700px",
-                height: "700px"
+                height: "65%",
+                overflowY: "scroll"
             }}
         >
             {children}

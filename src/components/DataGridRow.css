@@ -1,0 +1,8 @@
+.data-grid-row {
+    background-color : #ffffff;
+}
+
+.data-grid-row:hover {
+    background-color : #e4e8f6;
+}
+
