@@ -4,6 +4,7 @@ import DataGridWrapper from "./components/DataGridWrapper";
 import useGetProductData from "./hooks/useGetProductData";
 import DataGridRow from "./components/DataGridRow";
 import "./ui/DataGrid.css";
+import DataGridHeader from "./components/DataGridHeader";
 
 const ValueStatus = {
     available: "available",
@@ -23,6 +24,7 @@ export function DataGrid(props) {
         return (
             <DataGridWidgetWrapper>
                 <DataGridWrapper>
+                    <DataGridHeader product={myProductData[0]} />
                     {myProductData.map(product => {
                         return <DataGridRow product={product} />;
                     })}

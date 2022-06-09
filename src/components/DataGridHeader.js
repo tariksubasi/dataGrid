@@ -1,19 +1,21 @@
 import React, { createElement } from "react";
 
-const DataGridRow = ({ product }) => {
+const DataGridHeader = ({ product }) => {
     return (
         <div
             style={{
                 display: "flex",
                 justifyContent: "space-around",
-                padding: "3px"
+                padding: "3px",
+                fontWeight: "bold",
+                border: "1px solid"
             }}
         >
             {Object.keys(product).map(key => {
-                return <div style={{ flex: "1 1 0px", textAlign: "center" }}>{product[key].toString()}</div>;
+                return <div style={{ flex: "1 1 0px", textAlign: "center" }}>{key}</div>;
             })}
         </div>
     );
 };
 
-export default DataGridRow;
+export default DataGridHeader;
