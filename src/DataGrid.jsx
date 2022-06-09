@@ -1,4 +1,4 @@
-import { createElement } from "react";
+import { createElement, useState } from "react";
 import DataGridWidgetWrapper from "./components/DataGridWidgetWrapper";
 import DataGridWrapper from "./components/DataGridWrapper";
 import useGetProductData from "./hooks/useGetProductData";
@@ -21,14 +21,16 @@ export function DataGrid(props) {
 
     if (productDataStatus === ValueStatus.available) {
         const { myProductData, productDataSource } = useGetProductData(props);
-        console.warn("myProductData", myProductData);
+
+        const [selected, setSelected] = useState(null);
+        console.warn("selected", selected);
         return (
             <DataGridWidgetWrapper>
                 <DataGridWrapper>
                     <DataGridTopbar productDataSource={productDataSource} />
                     <DataGridHeader product={myProductData[0]} />
                     {myProductData.map(product => {
-                        return <DataGridRow product={product} />;
+                        return <DataGridRow product={product} selected={selected} setSelected={setSelected} />;
                     })}
                 </DataGridWrapper>
             </DataGridWidgetWrapper>
