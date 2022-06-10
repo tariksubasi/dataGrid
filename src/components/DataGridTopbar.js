@@ -10,6 +10,12 @@ const DataGridTopbar = ({ productDataSource, onAdd, onEdit, onRemove, setPayload
             onEdit();
         }
     };
+    const remove = () => {
+        if (selected) {
+            setPayload(selected);
+            onRemove();
+        }
+    };
     return (
         <div
             style={{
@@ -44,7 +50,7 @@ const DataGridTopbar = ({ productDataSource, onAdd, onEdit, onRemove, setPayload
                 <button className="btn btn-light btn-sm" style={{ marginLeft: "5px" }} onClick={edit}>
                     edit
                 </button>
-                <button className="btn btn-danger btn-sm" style={{ marginLeft: "5px" }} onClick={onRemove}>
+                <button className="btn btn-danger btn-sm" style={{ marginLeft: "5px" }} onClick={remove}>
                     remove
                 </button>
             </div>
