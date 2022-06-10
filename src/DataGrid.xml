@@ -54,6 +54,19 @@
                     <attributeType name="String" />
                 </attributeTypes>
             </property>
+
+            <property key="add" type="action">
+                <caption>onAdd</caption>
+                <description>onAdd Description</description>
+            </property>
+            <property key="edit" type="action">
+                <caption>onEdit</caption>
+                <description>onEdit Description</description>
+            </property>
+            <property key="remove" type="action">
+                <caption>onRemove</caption>
+                <description>onRemove Description</description>
+            </property>
         </propertyGroup>
     </properties>
 </widget>

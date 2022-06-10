@@ -6,6 +6,7 @@ import DataGridRow from "./components/DataGridRow";
 import "./ui/DataGrid.css";
 import DataGridHeader from "./components/DataGridHeader";
 import DataGridTopbar from "./components/DataGridTopbar";
+import useGetGridAction from "./hooks/useGetGridAction";
 
 const ValueStatus = {
     available: "available",
@@ -21,13 +22,14 @@ export function DataGrid(props) {
 
     if (productDataStatus === ValueStatus.available) {
         const { myProductData, productDataSource } = useGetProductData(props);
+        const { onAdd, onEdit, onRemove } = useGetGridAction(props);
 
         const [selected, setSelected] = useState(null);
         console.warn("selected", selected);
         return (
             <DataGridWidgetWrapper>
                 <DataGridWrapper>
-                    <DataGridTopbar productDataSource={productDataSource} />
+                    <DataGridTopbar productDataSource={productDataSource} {...{ onAdd, onEdit, onRemove }} />
                     <DataGridHeader product={myProductData[0]} />
                     {myProductData.map(product => {
                         return <DataGridRow product={product} selected={selected} setSelected={setSelected} />;

@@ -1,6 +1,6 @@
 import React, { createElement } from "react";
 
-const DataGridTopbar = ({ productDataSource }) => {
+const DataGridTopbar = ({ productDataSource, onAdd, onEdit, onRemove }) => {
     const ds = productDataSource;
     const current = productDataSource.offset;
     return (
@@ -31,9 +31,15 @@ const DataGridTopbar = ({ productDataSource }) => {
                 ></span>
             </div>
             <div>
-                <button className="btn btn-light btn-sm">add</button>
-                <button className="btn btn-light btn-sm">edit</button>
-                <button className="btn btn-danger btn-sm">remove</button>
+                <button className="btn btn-light btn-sm" onClick={onAdd}>
+                    add
+                </button>
+                <button className="btn btn-light btn-sm" style={{ marginLeft: "5px" }} onClick={onEdit}>
+                    edit
+                </button>
+                <button className="btn btn-danger btn-sm" style={{ marginLeft: "5px" }} onClick={onRemove}>
+                    remove
+                </button>
             </div>
         </div>
     );
