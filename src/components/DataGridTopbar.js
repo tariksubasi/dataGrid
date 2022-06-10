@@ -1,8 +1,15 @@
 import React, { createElement } from "react";
 
-const DataGridTopbar = ({ productDataSource, onAdd, onEdit, onRemove }) => {
+const DataGridTopbar = ({ productDataSource, onAdd, onEdit, onRemove, setPayload, selected }) => {
     const ds = productDataSource;
     const current = productDataSource.offset;
+
+    const edit = () => {
+        if (selected) {
+            setPayload(selected);
+            onEdit();
+        }
+    };
     return (
         <div
             style={{
@@ -34,7 +41,7 @@ const DataGridTopbar = ({ productDataSource, onAdd, onEdit, onRemove }) => {
                 <button className="btn btn-light btn-sm" onClick={onAdd}>
                     add
                 </button>
-                <button className="btn btn-light btn-sm" style={{ marginLeft: "5px" }} onClick={onEdit}>
+                <button className="btn btn-light btn-sm" style={{ marginLeft: "5px" }} onClick={edit}>
                     edit
                 </button>
                 <button className="btn btn-danger btn-sm" style={{ marginLeft: "5px" }} onClick={onRemove}>

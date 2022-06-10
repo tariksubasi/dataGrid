@@ -22,14 +22,17 @@ export function DataGrid(props) {
 
     if (productDataStatus === ValueStatus.available) {
         const { myProductData, productDataSource } = useGetProductData(props);
-        const { onAdd, onEdit, onRemove } = useGetGridAction(props);
+        const { onAdd, onEdit, onRemove, payload, setPayload } = useGetGridAction(props);
 
         const [selected, setSelected] = useState(null);
         console.warn("selected", selected);
         return (
             <DataGridWidgetWrapper>
                 <DataGridWrapper>
-                    <DataGridTopbar productDataSource={productDataSource} {...{ onAdd, onEdit, onRemove }} />
+                    <DataGridTopbar
+                        productDataSource={productDataSource}
+                        {...{ onAdd, onEdit, onRemove, setPayload, selected }}
+                    />
                     <DataGridHeader product={myProductData[0]} />
                     {myProductData.map(product => {
                         return <DataGridRow product={product} selected={selected} setSelected={setSelected} />;

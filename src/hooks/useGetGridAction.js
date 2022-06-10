@@ -1,5 +1,10 @@
 const useGetGridAction = props => {
-    const { add, edit, remove } = props;
+    const {
+        add,
+        edit,
+        remove,
+        payload: { displayValue: data, setValue: setPayload }
+    } = props;
 
     const onAdd = () => {
         if (add && add.canExecute) {
@@ -16,10 +21,18 @@ const useGetGridAction = props => {
             remove.execute();
         }
     };
+
+    let payload = "";
+
+    if (data.status === "available") {
+        payload = data;
+    }
     return {
         onAdd,
         onEdit,
-        onRemove
+        onRemove,
+        payload,
+        setPayload
     };
 };
 

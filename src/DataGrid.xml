@@ -68,5 +68,16 @@
                 <description>onRemove Description</description>
             </property>
         </propertyGroup>
+
+        <propertyGroup caption = "GridHelper">
+             <property key="payload" type="attribute" required="false" >
+                <caption>Carries Data For Microflows</caption>
+                <description> Description</description>
+                <attributeTypes>
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+
+        </propertyGroup>
     </properties>
 </widget>
